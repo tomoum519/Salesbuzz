@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-05-03T14:39:53 EET" name="Default suite" finished-at="2021-05-03T14:41:01 EET" duration-ms="67797">
+    <groups>
+    </groups>
+    <test started-at="2021-05-03T14:39:53 EET" name="Default test" finished-at="2021-05-03T14:41:01 EET" duration-ms="67797">
+      <class name="TestCases.CheckPromotion">
+        <test-method is-config="true" signature="setup()[pri:0, instance:TestCases.CheckPromotion@2abf4075]" started-at="2021-05-03T14:39:53 EET" name="setup" finished-at="2021-05-03T14:40:01 EET" duration-ms="7995" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="Login()[pri:0, instance:TestCases.CheckPromotion@2abf4075]" started-at="2021-05-03T14:40:01 EET" name="Login" finished-at="2021-05-03T14:40:10 EET" duration-ms="8661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="check_invoice()[pri:0, instance:TestCases.CheckPromotion@2abf4075]" started-at="2021-05-03T14:40:10 EET" name="check_invoice" finished-at="2021-05-03T14:40:39 EET" depends-on-methods="TestCases.CheckPromotion.Login" duration-ms="29097" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_invoice -->
+        <test-method signature="check_promotion()[pri:0, instance:TestCases.CheckPromotion@2abf4075]" started-at="2021-05-03T14:40:39 EET" name="check_promotion" finished-at="2021-05-03T14:41:01 EET" depends-on-methods="TestCases.CheckPromotion.check_invoice" duration-ms="21997" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- check_promotion -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:TestCases.CheckPromotion@2abf4075]" started-at="2021-05-03T14:41:01 EET" name="teardown" finished-at="2021-05-03T14:41:03 EET" duration-ms="1751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- TestCases.CheckPromotion -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
