@@ -5,11 +5,10 @@
     <classes>
       <class name="TestCases.CheckPromotion">
         <methods>
-          <include name="Login"/>
+          <include name="checkpromotion"/>
           <include name="teardown"/>
+          <include name="close"/>
           <include name="setup"/>
-          <include name="check_invoice"/>
-          <include name="check_promotion"/>
         </methods>
       </class> <!-- TestCases.CheckPromotion -->
     </classes>

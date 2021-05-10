@@ -35,6 +35,8 @@ public class InvoicePage extends BasePage{
 	WebElement product_promotion_element_exist_xpath;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 	WebElement check_quantity_of_promotion;
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout")
+	WebElement product_textbox;
 	
 	
 
@@ -108,4 +110,11 @@ public class InvoicePage extends BasePage{
 		String check = check_quantity_of_promotion.getText();
 		return check;
 	}
+	
+	public void click_product_textbox()
+	{
+		product_textbox.click();
+	}
+	
+	
 }

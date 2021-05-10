@@ -1,6 +1,7 @@
 package Pages;
 
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -63,6 +64,16 @@ public class BasePage extends TestBase{
 	public void finsih_button_click()
 	{
 		finsih_button_id.click();
+	}
+	
+	public void waits()
+	{
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	public static double roundAvoid(double value, int places) {
+	    double scale = Math.pow(10, places);
+	    return Math.round(value * scale) / scale;
 	}
 	
 	

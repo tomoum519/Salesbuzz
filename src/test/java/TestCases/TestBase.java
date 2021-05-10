@@ -4,7 +4,11 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.reporters.TestHTMLReporter;
 
@@ -31,7 +35,7 @@ public class TestBase {
 	
 	*/
 	
-	@BeforeTest
+	@BeforeMethod
 	public void setup() throws MalformedURLException
 	{
 		
@@ -56,10 +60,15 @@ public class TestBase {
 
 	}
 	
+	@AfterMethod
+	public void close() 
+	{
+		driver.quit();
+	}
+	
 	@AfterSuite
 	public void teardown() 
 	{
-		driver.quit();
 		extent.flush();
 	}
 
