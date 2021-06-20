@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\ahmedtomoum\AppData\Local\Temp\testng-eclipse--323825373\testng-customsuite.xml</span>
+                    <span>C:\Users\ahmedtomoum\AppData\Local\Temp\testng-eclipse--959483432\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="TestCases.CheckPromotion" class="method navigator-link" hash-for-method="checkpromotion">checkpromotion</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="TestCases.CheckPaymentTypes" class="method navigator-link" hash-for-method="checkBankTransferPayment(carrefour market, 6, 1, piece)">checkBankTransferPayment(carrefour market, 6, 1, piece)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -122,14 +122,15 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">TestCases.CheckPromotion</span>
+              <span class="class-name">TestCases.CheckPaymentTypes</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="checkpromotion">
-                  </a> <!-- checkpromotion -->
-                  <span class="method-name">checkpromotion</span>
+                  <a name="checkBankTransferPayment(carrefour market, 6, 1, piece)">
+                  </a> <!-- checkBankTransferPayment(carrefour market, 6, 1, piece) -->
+                  <span class="method-name">checkBankTransferPayment</span>
+                  <span class="parameters">(carrefour market, 6, 1, piece)</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -137,7 +138,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ahmedtomoum\AppData\Local\Temp\testng-eclipse--323825373\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ahmedtomoum\AppData\Local\Temp\testng-eclipse--959483432\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -146,11 +147,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;TestCases.CheckPromotion&quot;&gt;
+      &lt;class name=&quot;TestCases.CheckPaymentTypes&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;checkpromotion&quot;/&gt;
+          &lt;include name=&quot;checkBankTransferPayment&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- TestCases.CheckPromotion --&gt;
+      &lt;/class&gt; &lt;!-- TestCases.CheckPaymentTypes --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -192,9 +193,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'checkpromotion')
-data.setCell(0, 2, 'TestCases.CheckPromotion')
-data.setCell(0, 3, 60669);
+data.setCell(0, 1, 'checkBankTransferPayment')
+data.setCell(0, 2, 'TestCases.CheckPaymentTypes')
+data.setCell(0, 3, 105258);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
@@ -214,9 +215,18 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">2 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">TestCases.CheckPaymentTypes</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">checkCreditCardPayment</span>
+                <br/>
+                <span class="ignored-method-name">checkCashPayment</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Default_suite" class="panel">
@@ -225,22 +235,22 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">TestCases.CheckPromotion</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">TestCases.CheckPaymentTypes</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">setup</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">checkpromotion</span>
-                <span class="method-start">8617 ms</span>
+                <span class="method-name">checkBankTransferPayment(carrefour market, 6, 1, piece)</span>
+                <span class="method-start">11043 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">close</span>
-                <span class="method-start">69290 ms</span>
+                <span class="method-start">116307 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-suite after">
                 <span class="method-name">teardown</span>
-                <span class="method-start">70636 ms</span>
+                <span class="method-start">117680 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

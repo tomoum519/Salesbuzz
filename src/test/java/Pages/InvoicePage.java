@@ -22,20 +22,22 @@ public class InvoicePage extends BasePage{
 	WebElement credit_invoice_id;
 	@FindBy(id = "SalesBuzz.Client:id/TemporaryButton")
 	WebElement temporary_invoice_id;
+	@FindBy(id = "SalesBuzz.Client:id/BankTransferButton")
+	WebElement bank_transfer_invoice_id;
 	
 	@FindBy(id = "SalesBuzz.Client:id/spinnerItemText")
 	WebElement product_type_id;
 	@FindBy(id = "SalesBuzz.Client:id/ReqQtyeditText")
 	WebElement product_quantity_textbox_id;
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.TextView")
-	WebElement product_type_piece_xpath;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout[2]/android.widget.TextView")
+	WebElement product_type_piece_xpath;
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.TextView")
 	WebElement product_type_carton_xpath;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout")
 	WebElement product_promotion_element_exist_xpath;
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.ListView/android.widget.LinearLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.TextView[1]")
 	WebElement check_quantity_of_promotion;
-	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout[2]/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout")
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.LinearLayout/android.widget.ListView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout")
 	WebElement product_textbox;
 	
 	
@@ -45,6 +47,7 @@ public class InvoicePage extends BasePage{
 		// TODO Auto-generated constructor stub
 	}
 
+	
 	public void choose_payment_method(String type)
 	{
 		if(type == "cash")
@@ -66,6 +69,10 @@ public class InvoicePage extends BasePage{
 		else if (type == "temporary")
 		{
 			temporary_invoice_id.click();
+		}
+		else if (type == "bank")
+		{
+			bank_transfer_invoice_id.click();
 		}
 	}
 	
@@ -89,7 +96,7 @@ public class InvoicePage extends BasePage{
 	}
 	public void choose_product_type(String type)
 	{
-		if(type == "Piece")
+		if(type == "Piece" || type == "piece")
 		{
 			product_type_piece_xpath.click();
 		}
@@ -105,7 +112,7 @@ public class InvoicePage extends BasePage{
 		return product_promotion_element_exist_xpath.isDisplayed();
 	}
 	
-	public String check_product_quantity_promotion()
+	public String getProductQuantityPromotion()
 	{
 		String check = check_quantity_of_promotion.getText();
 		return check;

@@ -24,14 +24,17 @@ public class BasePage extends TestBase{
 	
 	protected AndroidDriver<MobileElement> driver;
 	
-	private By continue_or_ok_button_id = By.id("android:id/button1");
 	
+	@FindBy(id = "android:id/button1")
+	WebElement continue_or_ok_button_id;
 	@FindBy(id = "android:id/search_button")
 	WebElement search_button_id;
 	@FindBy(id = "android:id/search_src_text")
 	WebElement search_textbox_id;
 	@FindBy(id = "SalesBuzz.Client:id/OrderScreenFinishButton")
 	WebElement finsih_button_id;
+	@FindBy(id = "android:id/button2")
+	WebElement cancel_or_no_button_id;
 	
 	public BasePage(AndroidDriver<MobileElement> driver) 
 	{
@@ -40,9 +43,13 @@ public class BasePage extends TestBase{
 		
 	}
 	
-	public void continue_or_ok_button_android() 
+	public void clickContinueOrOkButtonAndroid() 
 	{
-		driver.findElement(continue_or_ok_button_id).click();
+		continue_or_ok_button_id.click();
+	}
+	public void cancelOrNoButton_android() 
+	{
+		cancel_or_no_button_id.click();
 	}
 	public void back_button()
 	{
@@ -71,9 +78,14 @@ public class BasePage extends TestBase{
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
-	public static double roundAvoid(double value, int places) {
+	public double roundAvoid(double value, int places) {
 	    double scale = Math.pow(10, places);
 	    return Math.round(value * scale) / scale;
+	}
+	
+	public double doubleConverter(String value) {
+	    return Float.parseFloat(value);
+	    
 	}
 	
 	
