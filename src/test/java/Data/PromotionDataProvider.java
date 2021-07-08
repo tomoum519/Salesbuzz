@@ -28,7 +28,7 @@ public class PromotionDataProvider {
 	{
 		return new Object[][] {
 			{"hyper one market" , "cash" , "wafers","4","carbon"}
-			,{"hyper one market" , "cash","wafers","1","carbon"}
+			//,{"hyper one market" , "cash","wafers","1","carbon"}
 		};
 	}
 	

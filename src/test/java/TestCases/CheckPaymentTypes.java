@@ -13,7 +13,7 @@ public class CheckPaymentTypes extends TestBase{
 	
 	
 	
-	@Test(dataProvider="cashpayment", dataProviderClass = PaymentDataProvider.class )
+	@Test(dataProvider="cashpayment", dataProviderClass = PaymentDataProvider.class, groups = {"regression","SalesOrderRegression"} )
 	public void checkCashPayment(String customer_name, String product_name, String product_value,String product_type)
 	{
 		NewVisteModular steps = new NewVisteModular(driver);

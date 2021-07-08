@@ -15,40 +15,62 @@ public class DataBaseReader {
 	String sql;
 	private String ItemName;
 	private String price;
+	private String first_colunmresult;
+	private String sec_colunmresult;
 	
 	
-	public DataBaseReader() throws SQLException
+	
+	public ResultSet DataBaseRead(String sql) throws SQLException
 	{
 		connection = DriverManager.getConnection(jdbcUrl);
-		sql = "select i.ItemNameE , p.GrossSalePrice \r\n"
-				+ "from HH_Item i, HH_ItemPrice p\r\n"
-				+ "on i.ItemNo = p.ItemNo\r\n"
-				+ "where p.ItemNo = \"1318754\" and p.SellingPriceCode = \"ws\" and p.UOM = \"CTN\"";
 		statement = connection.createStatement();
 		result = statement.executeQuery(sql);
-		
+		return result;
+	}
+
+	/*
+	public void setResult(ResultSet result) throws SQLException
+	{
 		while(result.next())
 		{
 			ItemName = result.getString("ItemNameE");
 			price = result.getString("GrossSalePrice");
 			
-			System.out.println(ItemName +"   "+ price);
 		}
 	}
-
 	
-	public String getname()
-	{
-
-		return ItemName;
-	}
+	*/
 	
-	public String getprice()
-	{
-
-		return price;
-	}
+	protected void setResult(ResultSet result,String colunm) throws SQLException {
 		
+		while(result.next())
+		{
+			first_colunmresult = result.getString(colunm);
+			
+		}
+		
+	}
+
+	protected void setResult(ResultSet result,String first_colunm, String sec_coulum) throws SQLException {
+		
+		while(result.next())
+		{
+			first_colunmresult = result.getString(first_colunm);
+			sec_colunmresult = result.getString(sec_coulum);
+		}
+		
+	}
+
+
+	public String getFirstColunmResult()
+	{
+		return first_colunmresult;
+	}
+	
+	public String getSecColunmResult()
+	{
+		return sec_colunmresult;
+	}
 		
 	
 	

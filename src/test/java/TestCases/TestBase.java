@@ -34,7 +34,7 @@ public class TestBase {
 	
 	*/
 	
-	@BeforeMethod
+	@BeforeMethod(groups = {"regression","SalesOrderRegression"})
 	public void setup() throws MalformedURLException
 	{
 		

@@ -9,10 +9,53 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num">0</td><td class="num">0</td><td class="num">0</td><td class="num">117,686</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">10</td><td class="num">0</td><td class="num">0</td><td class="num attn">1</td><td class="num">731,585</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">TestCases.CheckPaymentTypes</td><td><a href="#m0">checkBankTransferPayment</a></td><td rowspan="1">1624197952399</td><td rowspan="1">105258</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">TestCases.CheckPromotion</td><td><a href="#m0">checkQuantityToValue</a></td><td rowspan="1">1625662534592</td><td rowspan="1">62380</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="10">TestCases.CheckPromotion</td><td><a href="#m1">checkQuantityToFreeGoods</a></td><td rowspan="3">1625662203709</td><td rowspan="3">61147</td></tr><tr class="passedeven"><td><a href="#m2">checkQuantityToFreeGoods</a></td></tr><tr class="passedeven"><td><a href="#m3">checkQuantityToFreeGoods</a></td></tr><tr class="passedeven"><td><a href="#m4">checkQuantityToNewPrice</a></td><td rowspan="1">1625662342367</td><td rowspan="1">46685</td></tr><tr class="passedeven"><td><a href="#m5">checkQuantityToPercantage</a></td><td rowspan="1">1625662397378</td><td rowspan="1">60009</td></tr><tr class="passedeven"><td><a href="#m6">checkQuantityToValue</a></td><td rowspan="1">1625662465981</td><td rowspan="1">59957</td></tr><tr class="passedeven"><td><a href="#m7">checkValueToFreeGoods</a></td><td rowspan="1">1625662605440</td><td rowspan="1">58535</td></tr><tr class="passedeven"><td><a href="#m8">checkValueToNewPrice</a></td><td rowspan="1">1625662672758</td><td rowspan="1">61562</td></tr><tr class="passedeven"><td><a href="#m9">checkValueToPercantage</a></td><td rowspan="1">1625662742754</td><td rowspan="1">57553</td></tr><tr class="passedeven"><td><a href="#m10">checkValueToValue</a></td><td rowspan="1">1625662808733</td><td rowspan="1">57886</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">TestCases.CheckPaymentTypes#checkBankTransferPayment</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th></tr><tr class="param stripe"><td>carrefour market</td><td>6</td><td>1</td><td>piece</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h2>Default test</h2><h3 id="m0">TestCases.CheckPromotion#checkQuantityToValue</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bonjour</td><td>cash</td><td>Caramel chocolate</td><td>1</td><td>carbon</td></tr><tr><th colspan="5">Exception</th></tr><tr><td colspan="5"><div class="stacktrace">java.lang.AssertionError: Something wrong with value promotion expected [20.0] but found [0.0]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEquals(Assert.java:701)
+	at TestCases.CheckPromotion.checkQuantityToValue(CheckPromotion.java:158)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:764)
+	at org.testng.TestRunner.run(TestRunner.java:585)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+	at org.testng.TestNG.runSuites(TestNG.java:1069)
+	at org.testng.TestNG.run(TestNG.java:1037)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">TestCases.CheckPromotion#checkQuantityToFreeGoods</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bonjour</td><td>cash</td><td>wafers</td><td>5</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">TestCases.CheckPromotion#checkQuantityToFreeGoods</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bonjour</td><td>cash</td><td>wafers</td><td>6</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">TestCases.CheckPromotion#checkQuantityToFreeGoods</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bonjour</td><td>cash</td><td>wafers</td><td>10</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">TestCases.CheckPromotion#checkQuantityToNewPrice</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>metro market</td><td>cash</td><td>wafers</td><td>6</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">TestCases.CheckPromotion#checkQuantityToPercantage</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bonjour</td><td>cash</td><td>bounty</td><td>5</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">TestCases.CheckPromotion#checkQuantityToValue</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>bonjour</td><td>cash</td><td>Caramel chocolate</td><td>5</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">TestCases.CheckPromotion#checkValueToFreeGoods</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>hyper one market</td><td>cash</td><td>wafers</td><td>4</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">TestCases.CheckPromotion#checkValueToNewPrice</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>metro market</td><td>cash</td><td>wafers</td><td>4</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">TestCases.CheckPromotion#checkValueToPercantage</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>carrefour market</td><td>cash</td><td>wafers</td><td>10</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">TestCases.CheckPromotion#checkValueToValue</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>hyper one market</td><td>cash</td><td>Caramel chocolate</td><td>4</td><td>carbon</td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

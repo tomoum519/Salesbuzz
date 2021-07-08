@@ -15,7 +15,14 @@ public class CheckProductPrice extends TestBase {
 	@Test
 	public void checkProductprice() throws SQLException
 	{
+		/*
 		DataBaseReader data = new DataBaseReader();
+		data.setResult(data.DataBaseRead( "select i.ItemNameE , p.GrossSalePrice \r\n"
+				+ "from HH_Item i, HH_ItemPrice p\r\n"
+				+ "on i.ItemNo = p.ItemNo\r\n"
+				+ "where p.ItemNo = \"1318754\" and p.SellingPriceCode = \"ws\" and p.UOM = \"CTN\"")
+		);
+		
 		String itemname = data.getname();
 		String price =data.getprice();
 		
@@ -28,7 +35,7 @@ public class CheckProductPrice extends TestBase {
 		double product_price = promotion.doubleConverter(promotion.getPriceOfTheProduct());
 		double dprice = Double.valueOf(price).doubleValue();
 		assertEquals(promotion.roundAvoid(product_price, 2), dprice );
-		
+		*/
 	}
 
 }

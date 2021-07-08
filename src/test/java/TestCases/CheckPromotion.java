@@ -75,7 +75,7 @@ public class CheckPromotion extends TestBase {
 	}
 	
 	// check boundry value of the free goods
-	@Test(dataProvider="valuetogoods", dataProviderClass = PromotionDataProvider.class)
+	@Test(dataProvider="valuetogoods", dataProviderClass = PromotionDataProvider.class, groups = {"regression","SalesOrderRegression"})
 	public void checkValueToFreeGoods(String customer_name, String payment_method,String product_name, String product_value,String product_type)
 	{
 		NewVisteModular steps = new NewVisteModular(driver);
@@ -94,7 +94,7 @@ public class CheckPromotion extends TestBase {
 		double total_price_without_discount = product_price * enterd_quantite;
 		double total_taxes = total_price_without_discount*0.05;
 		assertEquals(promotion.roundAvoid(taxesvalue, 2), total_taxes,"Wrong calculation with Taxes");
-		assertTrue(promotion.check_promotion_element_for_extra_piece_exist(), "no free gooda promotion");
+		assertTrue(promotion.checkFreeGoodPromotionElement(), "no free gooda promotion");
 		double count_free_goods = promotion.doubleConverter(promotion.getNumbersOfFreeGoods());
 		double promotion_repeat = total_price_without_discount /200;
 		assertEquals(count_free_goods, promotion_repeat,"wrong number of promotion");
@@ -213,7 +213,7 @@ public class CheckPromotion extends TestBase {
 		double total_price_without_discount = product_price * enterd_quantite;
 		double total_taxes = total_price_without_discount*0.05;
 		assertEquals(promotion.roundAvoid(taxesvalue, 2), total_taxes,"Wrong calculation with Taxes");
-		assertTrue(promotion.check_promotion_element_for_extra_piece_exist(), "no free gooda promotion");
+		assertTrue(promotion.checkFreeGoodPromotionElement(), "no free gooda promotion");
 		
 		
 		double count_free_goods = promotion.doubleConverter(promotion.getNumbersOfFreeGoods());

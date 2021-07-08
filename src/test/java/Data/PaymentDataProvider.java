@@ -8,6 +8,7 @@ public class PaymentDataProvider {
 	public static Object[][] dataCashPayment()
 	{
 		return new Object[][] {
+			// customer name | product name| product quantity | product type
 			{"carrefour market" , "6","1","piece"}
 		};
 	}
@@ -16,7 +17,8 @@ public class PaymentDataProvider {
 	public static Object[][] dataCreditCardPayment()
 	{
 		return new Object[][] {
-			{"carrefour market" , "6","1","piece"}
+			// customer name | product name| product quantity | product type | transaction number
+			{"carrefour market" , "6","1","piece","123"}
 		};
 	}
 	
@@ -24,7 +26,8 @@ public class PaymentDataProvider {
 	public static Object[][] dataBankTranssfer()
 	{
 		return new Object[][] {
-			{"carrefour market" , "6","1","piece"}
+			// customer name | product name| product quantity | product type | bank name | transaction number
+			{"carrefour market" , "6","1","piece","HS","123"}
 		};
 	}
 

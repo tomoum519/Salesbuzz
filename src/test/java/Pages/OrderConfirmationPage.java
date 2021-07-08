@@ -27,6 +27,10 @@ public class OrderConfirmationPage extends BasePage {
 	WebElement free_goods_type_xpath;
 	@FindBy(id = "SalesBuzz.Client:id/OrderConfirmFinishButton")
 	WebElement order_confirmation_finish_button_id;
+	@FindBy(id = "SalesBuzz.Client:id/QuantityTextView")
+	WebElement product_quantity_id;
+	@FindBy(id = "SalesBuzz.Client:id/ItemNameTextView")
+	WebElement product_name_id;
 
 	public OrderConfirmationPage(AndroidDriver<MobileElement> driver)
 	{
@@ -35,7 +39,7 @@ public class OrderConfirmationPage extends BasePage {
 	}
 	
 
-	public boolean check_promotion_element_for_extra_piece_exist()
+	public boolean checkFreeGoodPromotionElement()
 	{
 		boolean x = false;
 		try
@@ -91,6 +95,16 @@ public class OrderConfirmationPage extends BasePage {
 		order_confirmation_finish_button_id.click();
 	}
 	
+	public String getProductQuantity()
+	{
+		String product_quantity = product_quantity_id.getText();
+		return product_quantity;
+	}
 	
+	public String getProductName()
+	{
+		String product_name = product_name_id.getText();
+		return product_name;
+	}
 	
 }

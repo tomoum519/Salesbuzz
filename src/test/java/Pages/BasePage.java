@@ -35,6 +35,10 @@ public class BasePage extends TestBase{
 	WebElement finsih_button_id;
 	@FindBy(id = "android:id/button2")
 	WebElement cancel_or_no_button_id;
+	@FindBy(id = "android:id/message")
+	WebElement message_id;
+	@FindBy(id = "SalesBuzz.Client:id/action_search")
+	WebElement filter_search_textbox_id;
 	
 	public BasePage(AndroidDriver<MobileElement> driver) 
 	{
@@ -88,6 +92,21 @@ public class BasePage extends TestBase{
 	    
 	}
 	
+	public String getMessage()
+	{
+		return message_id.getText();
+	}
+	
+	public void filterSearchTextbox(String search)
+	{
+		filter_search_textbox_id.sendKeys(search);
+		driver.pressKey(new KeyEvent(AndroidKey.ENTER));
+	}
+	
+	public void clearSearchTextBox()
+	{
+		search_textbox_id.clear();
+	}
 	
 
 }

@@ -28,12 +28,8 @@ public class NewVisteModular extends BasePage {
 	public void chooseCustomer(String choose_customer_name)
 	{
 		HomePage home = new HomePage(driver);
-		CustomersSelectionPage customerselect = new CustomersSelectionPage(driver);
-		
-		
-		home.click_new_visit();
-		//test.pass("passed");
-		
+		CustomersSelectionPage customerselect = new CustomersSelectionPage(driver);	
+		home.click_new_visit();		
 		customerselect.click_menu();
 		customerselect.click_route();
 		customerselect.click_all_days();
@@ -56,25 +52,21 @@ public class NewVisteModular extends BasePage {
 	{
 		InvoicePage invoice = new InvoicePage(driver);
 		invoice.waits();
-		invoice.choose_payment_method(payment_method);
+		invoice.choosePaymentMethod(payment_method);
 		try
 		{
 			invoice.search_button_android();
 		}catch (Exception e) 
 		{
 			invoice.cancelOrNoButton_android();
-			invoice.search_button_android();
-			
+			invoice.search_button_android();	
 		}
-		
 		invoice.search_textbox_android(product_name);
 		invoice.waits();
-		//driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		invoice.click_product_textbox();
-		invoice.prduct_quantity_value(product_value);
-		invoice.click_product_type();
-		invoice.choose_product_type(product_type);
-		invoice.back_button();
+		invoice.clickProductViewBox();
+		invoice.prductQuantityValue(product_value);
+		invoice.clickProductType();
+		invoice.chooseProductType(product_type);
 		try
 		{
 			invoice.finsih_button_click();
@@ -92,10 +84,7 @@ public class NewVisteModular extends BasePage {
 		submit.clickFinishInOrderConfirmationPage();
 		//submit.waits();
 		submit.clickContinueOrOkButtonAndroid();
-		
-		
 		return totalvalue;
-		
 	}
 	
 	public void payment()
