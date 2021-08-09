@@ -14,6 +14,8 @@ import org.testng.asserts.SoftAssert;
 import Data.PromotionDataProvider;
 import Data.SalesOrderDataBase;
 import Data.SalesOrderDataProvider;
+import Pages.CustomersSelectionPage;
+import Pages.HomePage;
 import Pages.InvoicePage;
 import Pages.ItemInfoPage;
 import Pages.OrderConfirmationPage;
@@ -326,5 +328,87 @@ public class CheckSalesOrders extends TestBase {
 		assertEquals(productquantity, product_value);
 		assertEquals(productname, getproductname);
 		assertEquals(product_price, productprice);
+	}
+	
+	
+	@Test(dataProvider="checkSalesOrderAddQuantityBiggerThanStock", dataProviderClass = SalesOrderDataProvider.class, groups = {"regression","SalesOrderRegression"})
+	public void checkSalesOrderAddQuantityBiggerThanStock(String customer_name, String payment_method,String product_name, String product_value)
+	{
+		NewVisteModular steps = new NewVisteModular(driver);
+		steps.login();
+		steps.chooseCustomer(customer_name);
+		steps.goToThirdRow();
+		InvoicePage invoice = new InvoicePage(driver);
+		invoice.waits();
+		invoice.choosePaymentMethod(payment_method);
+		try
+		{
+			invoice.search_button_android();
+		}catch (Exception e) 
+		{
+			invoice.cancelOrNoButton_android();
+			invoice.search_button_android();	
+		}
+		invoice.search_textbox_android(product_name);
+		invoice.waits();
+		invoice.clickProductViewBox();
+		invoice.prductQuantityValue(product_value);
+		double product_values = invoice.doubleConverter(product_value);
+		double product_quantity = invoice.doubleConverter(invoice.getProductQuantity());
+		assertTrue(product_values > product_quantity);
+		invoice.finsih_button_click();
+	}
+	
+	
+	@Test(dataProvider="checkCustomerJourny", dataProviderClass = SalesOrderDataProvider.class, groups = {"regression","SalesOrderRegression"} )
+	public void checkCustomerJourny(String day,List<String> customernames)
+	{
+		
+		NewVisteModular steps = new NewVisteModular(driver);
+		steps.login();
+		HomePage home = new HomePage(driver);
+		CustomersSelectionPage customerselect = new CustomersSelectionPage(driver);	
+		home.click_new_visit();		
+		customerselect.click_menu();
+		customerselect.click_route();
+		customerselect.selectDay(day);
+		List<String> customer_names = customerselect.getCustomerNames();
+		assertTrue(customernames.containsAll(customer_names));
+		
+	}
+	
+	
+	@Test(dataProvider="checkUnitMeasureScreenAndUpdate",groups = {"regression","SalesOrderRegression"} ,dataProviderClass = SalesOrderDataProvider.class )
+	public void checkUnitMeasureScreenAndUpdate(String customer,String productname, String producttype, String productquantity)
+	{
+		NewVisteModular steps = new NewVisteModular(driver);
+		
+		steps.login();
+		steps.chooseCustomer(customer);
+		steps.gotoinvoice();
+		
+		InvoicePage invoice = new InvoicePage(driver);
+		invoice.waits();
+		invoice.choosePaymentMethod("cash");
+		try
+		{
+			invoice.search_button_android();
+		}catch (Exception e) 
+		{
+			invoice.cancelOrNoButton_android();
+			invoice.search_button_android();
+		}
+		
+		invoice.search_textbox_android(productname);
+		invoice.clickInfoButton();
+		
+		ItemInfoPage info = new ItemInfoPage(driver);
+		info.swipeToUnitMeasureScreen();
+		info.chooseAndUpdateUint(producttype, productquantity);
+		info.clickFinish();
+		double product_quantity = invoice.roundAvoid(invoice.doubleConverter(invoice.getUpdateQuantity()),0);
+		int i = (int)product_quantity;
+		String product = String.valueOf(i); 
+		assertEquals(product, productquantity);
 	}
 }

@@ -66,6 +66,8 @@ public class InvoicePage extends BasePage{
 	WebElement masterbrand_filter_xpath;
 	@FindBy(className = "android.widget.Button" )
 	List<WebElement> payment_types_class;
+	@FindBy(id = "SalesBuzz.Client:id/QuantityTextView")
+	WebElement product_updated_quantity_id;
 	
 	
 	
@@ -224,5 +226,10 @@ public class InvoicePage extends BasePage{
 	         payments.add(temp);
 	      }
 		return payments;
+	}
+	
+	public String getUpdateQuantity()
+	{
+		return product_updated_quantity_id.getText();
 	}
 }

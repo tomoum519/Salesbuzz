@@ -72,4 +72,29 @@ public class SalesOrderDataProvider {
 			{"carrefour","cash" , "wafer","4","carbon"}
 		};
 	}
+	
+	@DataProvider(name="checkSalesOrderAddQuantityBiggerThanStock")
+	public static Object[][] checkSalesOrderAddQuantityBiggerThanStock()
+	{
+		return new Object[][] {
+			{"carrefour","cash","golden","40"}
+		};
+	}
+	
+	@DataProvider(name="checkCustomerJourny")
+	public static Object[][] checkCustomerJourny()
+	{
+		List<String> customernames =  Arrays.asList("Carrefour Market","Hyper One Market","Metro Market","Kheir Zaman Market","Spinneys Market","Bonjour");
+		return new Object[][] {
+			{"sunday",customernames}
+		};
+	}
+	
+	@DataProvider(name="checkUnitMeasureScreenAndUpdate")
+	public static Object[][] checkUnitMeasureScreenAndUpdate()
+	{
+		return new Object[][] {
+			{"carrefour","golden","carton","5"}
+		};
+	}
 }

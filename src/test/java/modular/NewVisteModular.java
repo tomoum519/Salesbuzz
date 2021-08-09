@@ -45,7 +45,16 @@ public class NewVisteModular extends BasePage {
 		newvisit.click_skip_button();
 		newvisit.click_skip_button();
 		newvisit.click_skip_button();
+		newvisit.clickContinueOrOkButtonAndroid();
 		newvisit.select_invoice();
+	}
+	
+	public void goToThirdRow()
+	{
+		VisitPage newvisit = new VisitPage(driver);
+		newvisit.click_skip_button();
+		newvisit.click_skip_button();
+		newvisit.select_third_row();
 	}
 	
 	public void chooseProduct(String payment_method,String product_name,String product_value,String product_type)
