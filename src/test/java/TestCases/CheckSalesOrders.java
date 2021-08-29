@@ -411,4 +411,19 @@ public class CheckSalesOrders extends TestBase {
 		String product = String.valueOf(i); 
 		assertEquals(product, productquantity);
 	}
+	
+	
+	@Test(dataProvider="checkChangeDeliveryDate", dataProviderClass = SalesOrderDataProvider.class, groups = {"regression","SalesOrderRegression"})
+	public void checkChangeDeliveryDate(String customer_name,String product_name, String payment_type, String product_value)
+	{
+		NewVisteModular steps = new NewVisteModular(driver);
+		steps.login();
+		steps.chooseCustomer(customer_name);
+		steps.goToThirdRow();
+		steps.chooseProduct("cash", product_name, product_value,payment_type);
+		OrderConfirmationPage confirmation = new OrderConfirmationPage(driver);
+		confirmation.clickMenu();
+		confirmation.clickChangeDeliveryDate();
+		confirmation.checkDateDisplayed();
+	}
 }

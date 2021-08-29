@@ -31,6 +31,12 @@ public class OrderConfirmationPage extends BasePage {
 	WebElement product_quantity_id;
 	@FindBy(id = "SalesBuzz.Client:id/ItemNameTextView")
 	WebElement product_name_id;
+	@FindBy(id = "SalesBuzz.Client:id/action_overflow")
+	WebElement menu_id;
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ListView/android.widget.LinearLayout[1]" )
+	WebElement change_delivery_date_xpath;
+	@FindBy(id = "android:id/content")
+	WebElement date_id;
 
 	public OrderConfirmationPage(AndroidDriver<MobileElement> driver)
 	{
@@ -105,6 +111,21 @@ public class OrderConfirmationPage extends BasePage {
 	{
 		String product_name = product_name_id.getText();
 		return product_name;
+	}
+	
+	public void clickMenu() 
+	{
+		menu_id.click();
+	}
+	
+	public void clickChangeDeliveryDate() 
+	{
+		change_delivery_date_xpath.click();
+	}
+	
+	public void checkDateDisplayed() 
+	{
+		date_id.isDisplayed();
 	}
 	
 }

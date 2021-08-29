@@ -97,4 +97,12 @@ public class SalesOrderDataProvider {
 			{"carrefour","golden","carton","5"}
 		};
 	}
+	
+	@DataProvider(name="checkChangeDeliveryDate")
+	public static Object[][] checkChangeDeliveryDate()
+	{
+		return new Object[][] {
+			{"carrefour","golden","carton","5"}
+		};
+	}
 }

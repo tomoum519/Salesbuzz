@@ -10,6 +10,8 @@ public class HomePage extends BasePage{
 	
 	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[4]/android.widget.Button")
 	WebElement new_visit_xpath;
+	@FindBy(xpath = "/hierarchy/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[1]/android.widget.HorizontalScrollView/android.widget.LinearLayout/android.app.ActionBar.Tab[2]")
+	WebElement inventory_xpath;
 	
 	public HomePage(AndroidDriver<MobileElement> driver)
 	{
@@ -46,9 +48,14 @@ public class HomePage extends BasePage{
 
 
 
-			}
-			//new_visit_xpath.click();	
+			}	
 
 		}
+	}
+	
+	
+	public void clickInventory()
+	{
+		inventory_xpath.click();
 	}
 }
